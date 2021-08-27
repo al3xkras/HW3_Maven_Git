@@ -1,5 +1,6 @@
 package org.example.java_hw_3;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,6 +12,7 @@ public class TestModel {
     @Before
     public void createModel(){
         model = new Model();
+        model.setMinMaxValues(0,100);
     }
 
     @Test
@@ -22,8 +24,22 @@ public class TestModel {
         ArrayList<Integer> uniqueValues = new ArrayList<>();
 
         for (int i=loops-1; i>=0; i++){
-            int randNum = model.rand(num)
+            int randNum = model.rand();
+
+            if (randNum<model.minRandValue || randNum>model.maxRandValue){
+                Assert.fail();
+            }
+
+            if (!uniqueValues.contains(randNum)){
+                uniqueValues.add(randNum);
+            }
+
         }
+
+        if (uniqueValues.size()<(model.maxRandValue-model.minRandValue)*0.8){
+            Assert.fail();
+        }
+
     }
 
     @Test
