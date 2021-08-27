@@ -2,8 +2,16 @@ package org.example.java_hw_3;
 
 public class Model {
 
-    public int minRandValue;
-    public int maxRandValue;
+    public Integer minRandValue;
+    public Integer maxRandValue;
+
+    public Integer secretNumber;
+
+    public void setSecretNumber(){
+        if (maxRandValue!=null & minRandValue!=null){
+            secretNumber = rand();
+        }
+    }
 
     public void setMinMaxValues(int min, int max){
         minRandValue = min;
