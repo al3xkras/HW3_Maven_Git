@@ -43,8 +43,20 @@ public class TestModel {
     }
 
     @Test
-    public void testSetSecretNumber(){
+    public void testSetSecretNumber1(){
+        model.setSecretNumber();
 
+        if (model.secretNumber==null ||
+                model.secretNumber<model.minRandValue ||
+                model.secretNumber>model.maxRandValue){
+            Assert.fail();
+        }
+
+    }
+
+    @Test
+    public void testSetSecretNumber2(){
+        Assert.assertNull(model.secretNumber);
     }
 
     @Test
