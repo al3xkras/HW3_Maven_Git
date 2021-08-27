@@ -23,7 +23,7 @@ public class TestModel {
 
         ArrayList<Integer> uniqueValues = new ArrayList<>();
 
-        for (int i=loops-1; i>=0; i++){
+        for (int i=loops-1; i>=0; i--){
             int randNum = model.rand();
 
             if (randNum<model.minRandValue || randNum>model.maxRandValue){
