@@ -11,7 +11,8 @@ public class Model {
     }
 
     public int rand(){
-        return minRandValue+(int)(Math.random()*(maxRandValue-minRandValue+1));
+        int dNumber = maxRandValue-minRandValue;
+        return minRandValue+(int)(Math.random()*(dNumber+1));
     }
 
 }
