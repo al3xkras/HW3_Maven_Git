@@ -23,4 +23,18 @@ public class Model {
         return minRandValue+(int)(Math.random()*(dNumber+1));
     }
 
+    public boolean checkUserInputNumber(int number){
+        if (number==secretNumber){
+            return true;
+        }
+
+        if (number>secretNumber){
+            maxRandValue = Math.min(maxRandValue,number);
+        } else {
+            minRandValue = Math.max(minRandValue,number);
+        }
+
+        return false;
+    }
+
 }

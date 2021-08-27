@@ -2,6 +2,7 @@ package org.example.java_hw_3;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -13,9 +14,9 @@ public class TestModel {
     public void createModel(){
         model = new Model();
         model.setMinMaxValues(0,100);
-        model.secretNumber = 50;
     }
 
+    @Ignore
     @Test
     public void testRand(){
         int loops = (model.maxRandValue-model.minRandValue)*20;
@@ -62,22 +63,30 @@ public class TestModel {
 
     @Test
     public void testCheckUserInputNumber1(){
+        model.secretNumber = 50;
         Assert.assertTrue(model.checkUserInputNumber(50));
     }
 
     @Test
     public void testCheckUserInputNumber2(){
+        model.secretNumber = 50;
         Assert.assertFalse(model.checkUserInputNumber(110));
+        Assert.assertEquals(100, (int) model.maxRandValue);
     }
 
     @Test
     public void testCheckUserInputNumber3(){
+        model.secretNumber = 50;
         Assert.assertFalse(model.checkUserInputNumber(-10));
+        Assert.assertEquals(0, (int) model.minRandValue);
     }
 
     @Test
     public void testCheckUserInputNumber4(){
+        model.secretNumber = 50;
         Assert.assertFalse(model.checkUserInputNumber(60));
+        Assert.assertEquals(60, (int) model.maxRandValue);
+
     }
 
 
