@@ -13,6 +13,7 @@ public class TestModel {
     public void createModel(){
         model = new Model();
         model.setMinMaxValues(0,100);
+        model.secretNumber = 50;
     }
 
     @Test
@@ -60,8 +61,23 @@ public class TestModel {
     }
 
     @Test
-    public void testCheckUserInputNumber(){
+    public void testCheckUserInputNumber1(){
+        Assert.assertTrue(model.checkUserInputNumber(50));
+    }
 
+    @Test
+    public void testCheckUserInputNumber2(){
+        Assert.assertFalse(model.checkUserInputNumber(110));
+    }
+
+    @Test
+    public void testCheckUserInputNumber3(){
+        Assert.assertFalse(model.checkUserInputNumber(-10));
+    }
+
+    @Test
+    public void testCheckUserInputNumber4(){
+        Assert.assertFalse(model.checkUserInputNumber(60));
     }
 
 
