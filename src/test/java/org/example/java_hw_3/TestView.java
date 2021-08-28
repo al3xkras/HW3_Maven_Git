@@ -54,7 +54,7 @@ public class TestView {
 
         String message = String.format(
                 View.MESSAGE_INPUT_NUMBER_NOT_IN_RANGE,
-                userInputNumber,model.minRandValue,model.maxRandValue);
+                userInputNumber,model.minValue,model.maxValue);
         Assert.assertEquals(message,view.getMessage(userInputNumber));
     }
 

@@ -19,7 +19,7 @@ public class TestModel {
     @Ignore
     @Test
     public void testRand(){
-        int loops = (model.maxRandValue-model.minRandValue)*20;
+        int loops = (model.maxValue -model.minValue)*20;
 
         loops = Math.min(10000,loops);
 
@@ -28,7 +28,7 @@ public class TestModel {
         for (int i=loops-1; i>=0; i--){
             int randNum = model.rand();
 
-            if (randNum<model.minRandValue || randNum>model.maxRandValue){
+            if (randNum<model.minValue || randNum>model.maxValue){
                 Assert.fail();
             }
 
@@ -38,7 +38,7 @@ public class TestModel {
 
         }
 
-        if (uniqueValues.size()<(model.maxRandValue-model.minRandValue)*0.8){
+        if (uniqueValues.size()<(model.maxValue -model.minValue)*0.8){
             Assert.fail();
         }
 
@@ -49,8 +49,8 @@ public class TestModel {
         model.setSecretNumber();
 
         if (model.secretNumber==null ||
-                model.secretNumber<model.minRandValue ||
-                model.secretNumber>model.maxRandValue){
+                model.secretNumber<model.minValue ||
+                model.secretNumber>model.maxValue){
             Assert.fail();
         }
 
@@ -71,21 +71,21 @@ public class TestModel {
     public void testCheckUserInputNumber2(){
         model.secretNumber = 50;
         Assert.assertFalse(model.checkUserInputNumber(110));
-        Assert.assertEquals(100, (int) model.maxRandValue);
+        Assert.assertEquals(100, (int) model.maxValue);
     }
 
     @Test
     public void testCheckUserInputNumber3(){
         model.secretNumber = 50;
         Assert.assertFalse(model.checkUserInputNumber(-10));
-        Assert.assertEquals(0, (int) model.minRandValue);
+        Assert.assertEquals(0, (int) model.minValue);
     }
 
     @Test
     public void testCheckUserInputNumber4(){
         model.secretNumber = 50;
         Assert.assertFalse(model.checkUserInputNumber(60));
-        Assert.assertEquals(60, (int) model.maxRandValue);
+        Assert.assertEquals(60, (int) model.maxValue);
 
     }
 

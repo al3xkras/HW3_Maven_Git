@@ -2,25 +2,25 @@ package org.example.java_hw_3;
 
 public class Model {
 
-    public Integer minRandValue;
-    public Integer maxRandValue;
+    public Integer minValue;
+    public Integer maxValue;
 
     public Integer secretNumber;
 
     public void setSecretNumber(){
-        if (maxRandValue!=null & minRandValue!=null){
+        if (maxValue !=null & minValue !=null){
             secretNumber = rand();
         }
     }
 
     public void setMinMaxValues(int min, int max){
-        minRandValue = min;
-        maxRandValue = max;
+        minValue = min;
+        maxValue = max;
     }
 
     public int rand(){
-        int dNumber = maxRandValue-minRandValue;
-        return minRandValue+(int)(Math.random()*(dNumber+1));
+        int dNumber = maxValue - minValue;
+        return minValue +(int)(Math.random()*(dNumber+1));
     }
 
     public boolean checkUserInputNumber(int number){
@@ -29,9 +29,9 @@ public class Model {
         }
 
         if (number>secretNumber){
-            maxRandValue = Math.min(maxRandValue,number);
+            maxValue = Math.min(maxValue,number);
         } else {
-            minRandValue = Math.max(minRandValue,number);
+            minValue = Math.max(minValue,number);
         }
 
         return false;

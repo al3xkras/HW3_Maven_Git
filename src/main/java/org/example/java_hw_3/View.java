@@ -1,7 +1,5 @@
 package org.example.java_hw_3;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
-
 public class View {
     public Model model;
 
@@ -26,9 +24,9 @@ public class View {
 
     public String getMessage(int number){
 
-        if (number>model.maxRandValue || number<model.minRandValue){
+        if (number>model.maxValue || number<model.minValue){
             return String.format(View.MESSAGE_INPUT_NUMBER_NOT_IN_RANGE,
-                    number,model.minRandValue,model.maxRandValue);
+                    number,model.minValue,model.maxValue);
         }
 
         if (number== model.secretNumber){
@@ -54,7 +52,7 @@ public class View {
 
     public void requestNumber(){
         String message = String.format(View.MESSAGE_REQUEST_NUMBER,
-                model.minRandValue,model.maxRandValue);
+                model.minValue,model.maxValue);
         System.out.println(message);
     }
 
