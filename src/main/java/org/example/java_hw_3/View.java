@@ -6,13 +6,13 @@ public class View {
     public Model model;
 
     public static final String MESSAGE_INPUT_NUMBER_GREATER =
-            "Input number is greater than secret number";
+            "Number is greater than secret number";
     public static final String MESSAGE_INPUT_NUMBER_LESS =
-            "Input number is less than secret number";
+            "Number is less than secret number";
     public static final String MESSAGE_INPUT_NUMBER_EQUALS =
-            "Input number is equal to unknown number!";
+            "Number is equal to unknown number!";
     public static final String MESSAGE_INPUT_NUMBER_NOT_IN_RANGE =
-            "Input number (%d) is not in range from %d to %d.";
+            "Number %d is not in range from %d to %d.";
     public static final String MESSAGE_GREET =
             "More or Less game: input number and try to guess secret number.\n";
     public static final String MESSAGE_REQUEST_NUMBER =
